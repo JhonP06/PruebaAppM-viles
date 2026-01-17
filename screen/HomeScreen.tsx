@@ -6,18 +6,22 @@ export default function HomeScreen({navigation} : any) {
     <View
     style={styles.container}
     >
-        <ImageBackground
-        style={{height:400, width:450}}
-        source={{uri:"https://4kwallpapers.com/images/walls/thumbs_3t/24938.jpg"}}
-        />
       <Text
-      style={{fontSize:25}}
+      style={{fontSize:25, paddingBlockStart:45, alignSelf:"center"}}
       >The Jhon Pillisa</Text>
 
-      <TouchableOpacity
+        <ImageBackground
+        style={{height:450, width:450}}
+        source={{uri:"https://4kwallpapers.com/images/walls/thumbs_3t/24938.jpg"}}
+        />
       
+
+      <TouchableOpacity
+      style={{alignSelf:"center",}}
       onPress={() => navigation.navigate("Drawer")}>
-        <Text>
+        <Text
+        style={{fontSize:20, color:"#71bd6e"}}
+        >
             INGRESAR
         </Text>
       </TouchableOpacity>
@@ -28,6 +32,7 @@ export default function HomeScreen({navigation} : any) {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-
+        
+        backgroundColor:"#666"
     }
 })

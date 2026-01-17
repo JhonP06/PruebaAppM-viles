@@ -11,22 +11,23 @@ export default function EditarScreen3() {
 
     function EditarDatos() {
     //const db = getDatabase();
+    
     update(ref(db, 'UsuarioN/' + Id), {
       Id: Id,
       Monto: Monto,
       Cat : Categoria,
       Desc : Descripcion
     });
+    Alert.alert("Mensaje", "Has editado exitosamente")
   }
 
   function EliminarDatos() {
     //const db = getDatabase();
-    //remove(ref(db, 'Personaje/' + id));
 
-    Alert.alert("Mensaje", "Estas seguro de eliminar??",[
+    Alert.alert("Mensaje", "Estas seguro de eliminar?",[
       {
         text:"Eliminar",
-        onPress: ()=> remove(ref(db, 'Personaje/' + Id))
+        onPress: ()=> remove(ref(db, 'UsuarioN/' + Id))
       },
       {
         text:"Cancelar"
@@ -40,7 +41,7 @@ export default function EditarScreen3() {
 
       <TextInput
           placeholder='Ingresar ID'
-          
+          keyboardType='numeric'
           onChangeText={(texto)=> setId(+texto) }
           >
   
@@ -56,7 +57,7 @@ export default function EditarScreen3() {
   
           <TextInput
           placeholder='Ingresar Monto'
-          
+          keyboardType='numeric'
           onChangeText={(texto)=> setMonto(+texto) }
           ></TextInput>
   
@@ -76,7 +77,7 @@ export default function EditarScreen3() {
 
           <TextInput
               placeholder='Ingresar ID'
-              
+              keyboardType='numeric'
               onChangeText={(texto)=> setId(+texto) }
               >
               </TextInput>

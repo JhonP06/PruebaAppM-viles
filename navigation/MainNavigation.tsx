@@ -14,8 +14,12 @@ const Drawer = createDrawerNavigator()
 function MyStack(){
     return(
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen}/>
-            <Stack.Screen name="Drawer" component={MyDrawer}/>
+            <Stack.Screen name="Home" component={HomeScreen}
+            
+            />
+            <Stack.Screen name="Drawer" component={MyDrawer}
+            options={{headerShown: false}}
+            />
         </Stack.Navigator>
     )
 }
@@ -23,9 +27,11 @@ function MyStack(){
 function MyDrawer(){
     return(
         <Drawer.Navigator>
-            <Drawer.Screen name="Registro" component={Registro1Screen}/>
+            <Drawer.Screen name="Registro" component={Registro1Screen}
+            
+            />
             <Drawer.Screen name="Leer" component={LeerScreen2}/>
-            <Drawer.Screen name="Editar" component={EditarScreen3}/>
+            <Drawer.Screen name="Editar/Eliminar" component={EditarScreen3}/>
         </Drawer.Navigator>
     )
 }

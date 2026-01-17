@@ -40,7 +40,7 @@ onValue(starCountRef, (snapshot) => {
   }
 
   function leer2(Id : string){
-    const userRef = ref(db, `UsuarioN/ ${Id}`);
+    const userRef = ref(db, `UsuarioN/${Id}`);
     onValue(userRef, (snapshot) => {
         const data = snapshot.val() as UsuarioN | null;
 
@@ -55,8 +55,12 @@ onValue(starCountRef, (snapshot) => {
   }
     
   return (
-    <View>
-      <Text>LeerScreen2</Text>
+    <View
+    style={{margin:15}}
+    >
+      <Text
+      style={{padding:5, fontSize:20}}
+      >LeerScreen2</Text>
 
       <FlatList
       data={Person}
@@ -65,9 +69,12 @@ onValue(starCountRef, (snapshot) => {
       <TouchableOpacity
       
       onPress={()=> leer2("")}>
-        <Text>
+        <Text
+        style={{fontSize:15}}
+        >
         {item.Id}...
-        {item.Categoria}
+        {item.Categoria}...
+        
       </Text>
       </TouchableOpacity>
       }
